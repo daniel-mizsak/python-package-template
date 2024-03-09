@@ -1,0 +1,116 @@
+# Build System
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Project Metadata
+[project]
+name = "python-package-template-pypi" # Name has to be unique on pypi.
+version = "0.0.1"
+description = "A github template with my python package configurations."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "Daniel Mizsak", email = "info@pythonvilag.hu" }]
+keywords = []
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+[project.optional-dependencies]
+dev = ["mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
+docs = ["furo", "sphinx", "sphinx-copybutton"]
+[project.urls]
+Repository = "https://github.com/daniel-mizsak/python-package-template"
+
+# Tools
+# Hatch
+[tool.hatch.build.targets.wheel]
+packages = ["src/python_package_template"]
+
+# MyPy
+[tool.mypy]
+ignore_missing_imports = true
+pretty = true
+show_column_numbers = true
+show_error_context = true
+strict = true
+warn_unreachable = true
+warn_unused_ignores = true
+
+# Pytest
+[tool.pytest.ini_options]
+addopts = "--cov=python_package_template"
+testpaths = ["tests"]
+
+# Ruff
+[tool.ruff]
+line-length = 120
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D203",  # one-blank-line-before-class
+    "D212",  # multi-line-summary-first-line
+    "FIX",   # flake8-fixme
+    "INP",   # flake8-no-pep420
+    "S104",  # hardcoded-bind-all-interfaces
+    "TD002", # missing-todo-author
+    "TD003", # missing-todo-link
+]
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "D104", # undocumented-public-package
+]
+"tests/**/*.py" = [
+    "ANN001",  # missing-type-function-argument
+    "ANN201",  # missing-return-type-undocumented-public-function
+    "D",       # pydocstyle
+    "PLR2004", # magic-value-comparison
+    "S101",    # assert
+]
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# Tox
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    envlist =
+        py312
+        ruff
+        mypy
+        docs
+    skip_missing_interpreters = true
+
+    [gh]
+    python =
+        3.12 = py312, ruff, mypy, docs
+
+    [testenv]
+    deps =
+        pytest
+        pytest-cov
+    commands =
+        pytest {posargs:tests}
+
+    [testenv:ruff]
+    deps =
+        ruff
+    commands =
+        ruff check src tests
+
+    [testenv:mypy]
+    deps =
+        mypy
+    commands =
+        mypy src
+        mypy tests
+
+    [testenv:docs]
+    extras =
+        docs
+    commands =
+        sphinx-build -d "{envtmpdir}{/}doctree" docs "{toxworkdir}{/}docs_out" --color -b html
+"""

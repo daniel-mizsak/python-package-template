@@ -1,0 +1,38 @@
+name: release
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/python-package-template-pypi
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Check out the codebase.
+        uses: actions/checkout@v4
+
+      - name: Set up python.
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Upgrade pip.
+        run: >
+          python -m pip install --upgrade pip
+
+      - name: Install dependencies.
+        run: >
+          pip install build
+
+      - name: Build the package.
+        run: >
+          python -m build
+
+      - name: Publish the package.
+        uses: pypa/gh-action-pypi-publish@release/v1

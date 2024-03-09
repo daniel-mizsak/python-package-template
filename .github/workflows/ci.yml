@@ -1,0 +1,14 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  tox:
+    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
+    with:
+      python-version: "3.12"
