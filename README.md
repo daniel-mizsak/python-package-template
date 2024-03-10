@@ -12,12 +12,18 @@
 A GitHub template with my python package configurations.
 
 ## GitHub repository settings
+The following settings are enabled in my repository settings:
+
 Code/About:
 - Releases
+
+<br>
 
 General/Features:
 - Issues
 - Preserve this repository
+
+<br>
 
 General/Pull Requests:
 - Allow merge commits
@@ -25,14 +31,18 @@ General/Pull Requests:
 - Allow rebase merging
 - Automatically delete head branches
 
+<br>
+
 Branches/Branch protection rules:\
-`main`
-- Protect matching branches
-  - Require pull request reviews before merging
-  - Dismiss stale pull request approvals when new commits are pushed
-  - Require status checks to pass before merging
-    - `pre-commit.ci - pr`
-    - `tox / tox`
+`main`\
+Protect matching branches
+- Require pull request reviews before merging
+- Dismiss stale pull request approvals when new commits are pushed
+- Require status checks to pass before merging
+- `pre-commit.ci - pr`
+- `tox / tox`
+
+<br>
 
 Environments:\
 `pypi`
@@ -42,11 +52,10 @@ Environments:\
 - Allow administrators to bypass configured protection rules
 
 ## Setup PyPi trusted publishing
-
 [PyPi publishing settings](https://pypi.org/manage/account/publishing/)
 
 Add a new pending publisher:
 - PyPi Project Name: `python-package-template-pypi` (has to match the project name in `pyproject.toml`)
 - Owner: `daniel-mizsak`
-- Repository name: `https://github.com/daniel-mizsak/python-package-template`
+- Repository name: `python-package-template`
 - Workflow name: `release.yml`
