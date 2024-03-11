@@ -1,0 +1,40 @@
+---
+name: Bug report
+about: Create a report to help us improve.
+labels: ["bug"]
+title: "[BUG]: "
+assignees:
+  - daniel-mizsak
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: vX.Y.Z
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: The operating system you are using.
+      options:
+        - Windows
+        - macOS
+        - Linux
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug
+    attributes:
+      label: Bug description
+      description: A clear and concise description of what the bug is.
