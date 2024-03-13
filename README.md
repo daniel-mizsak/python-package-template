@@ -7,25 +7,29 @@
 <a href="https://img.shields.io/github/license/daniel-mizsak/python-package-template" target="_blank"><img src="https://img.shields.io/github/license/daniel-mizsak/python-package-template" alt="license"></a>
 </div>
 
-
 ## Overview
+
 A GitHub template with my python package configurations.
 
 ## GitHub repository settings
+
 The following settings are enabled in my repository settings:
 
 Code/About:
+
 - Releases
 
 <br>
 
 General/Features:
+
 - Issues
 - Preserve this repository
 
 <br>
 
 General/Pull Requests:
+
 - Allow merge commits
 - Allow squash merging
 - Allow rebase merging
@@ -36,6 +40,7 @@ General/Pull Requests:
 Branches/Branch protection rules:\
 `main`\
 Protect matching branches
+
 - Require pull request reviews before merging
 - Dismiss stale pull request approvals when new commits are pushed
 - Require status checks to pass before merging
@@ -46,15 +51,25 @@ Protect matching branches
 
 Environments:\
 `pypi`
+
 - Deployment protection rules:
 - Required reviewers:
     `daniel-mizsak`
 - Allow administrators to bypass configured protection rules
 
+<br>
+
+Pages/Build and deployment:
+
+- Source: Deploy from branch
+- Branch: `gh-pages` (root)
+
 ## Setup PyPi trusted publishing
+
 [PyPi publishing settings](https://pypi.org/manage/account/publishing/)
 
 Add a new pending publisher:
+
 - PyPi Project Name: `python-package-template-pypi` (has to match the project name in `pyproject.toml`)
 - Owner: `daniel-mizsak`
 - Repository name: `python-package-template`

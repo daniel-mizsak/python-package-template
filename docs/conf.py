@@ -5,7 +5,7 @@ For the full list of built-in configuration values, see the documentation:
 https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 Built docs locally with:
-sphinx-build -b html docs/source/ docs/build/html
+sphinx-build -b html docs docs/build/html
 
 @author "Daniel Mizsak" <info@pythonvilag.hu>
 """
