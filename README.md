@@ -8,11 +8,25 @@
 </div>
 
 ## Overview
-
 A GitHub template with my python package configurations.
 
-## GitHub repository settings
+## Package tools
+This template package relies on the synchronized cooperation of several advanced tools.\
+These tools include:
+- [Hatch](https://hatch.pypa.io/latest/) - Package building
+- [MyPy](https://mypy.readthedocs.io/en/stable/) - Static type checking
+- [Pytest](https://docs.pytest.org/en/latest/) - Testing and coverage
+- [Ruff](https://docs.astral.sh/ruff/) - Formatting and linting
+- [Tox](https://tox.readthedocs.io/en/latest/) - Orchestration of the above tools
 
+For documentation:
+- [Sphinx](https://www.sphinx-doc.org/en/master/) - Documentation building
+- [ReadTheDocs](https://readthedocs.org/) - Documentation hosting
+- [GitHub Pages](https://pages.github.com/) - Documentation hosting
+
+The tool specific configurations are stored in the `pyproject.toml` file.
+
+## GitHub repository settings
 The following settings are enabled in my repository settings:
 
 Code/About:
@@ -44,8 +58,9 @@ Protect matching branches
 - Require pull request reviews before merging
 - Dismiss stale pull request approvals when new commits are pushed
 - Require status checks to pass before merging
-- `pre-commit.ci - pr`
-- `tox / tox`
+    - `pre-commit.ci - pr`
+    - `tox / tox`
+- Do not allow bypassing the above settings
 
 <br>
 
