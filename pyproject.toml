@@ -112,5 +112,5 @@ legacy_tox_ini = """
     extras =
         docs
     commands =
-        sphinx-build -d "{envtmpdir}{/}doctree" docs "{toxworkdir}{/}docs_out" --color -b html
+        sphinx-build -b html -d "{envtmpdir}{/}doctree" docs "{toxworkdir}{/}docs_out" --color
 """
