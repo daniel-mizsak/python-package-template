@@ -20,7 +20,7 @@ classifiers = [
 ]
 dependencies = []
 [project.optional-dependencies]
-dev = ["mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
+dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
 docs = ["furo", "sphinx", "sphinx-copybutton"]
 [project.urls]
 Repository = "https://github.com/daniel-mizsak/python-package-template"
@@ -42,75 +42,5 @@ warn_unused_ignores = true
 
 # Pytest
 [tool.pytest.ini_options]
-addopts = "--cov=python_package_template"
+addopts = "--cov-report=term-missing --cov-config=pyproject.toml --cov=python_package_template --cov=tests"
 testpaths = ["tests"]
-
-# Ruff
-[tool.ruff]
-line-length = 120
-[tool.ruff.lint]
-select = ["ALL"]
-ignore = [
-    "D203",  # one-blank-line-before-class
-    "D212",  # multi-line-summary-first-line
-    "FIX",   # flake8-fixme
-    "INP",   # flake8-no-pep420
-    "S104",  # hardcoded-bind-all-interfaces
-    "TD002", # missing-todo-author
-    "TD003", # missing-todo-link
-]
-[tool.ruff.lint.per-file-ignores]
-"__init__.py" = [
-    "D104", # undocumented-public-package
-]
-"tests/**/*.py" = [
-    "ANN001",  # missing-type-function-argument
-    "ANN201",  # missing-return-type-undocumented-public-function
-    "D",       # pydocstyle
-    "PLR2004", # magic-value-comparison
-    "S101",    # assert
-]
-[tool.ruff.lint.pydocstyle]
-convention = "google"
-
-# Tox
-[tool.tox]
-legacy_tox_ini = """
-    [tox]
-    envlist =
-        py312
-        ruff
-        mypy
-        docs
-    skip_missing_interpreters = true
-
-    [gh]
-    python =
-        3.12 = py312, ruff, mypy, docs
-
-    [testenv]
-    deps =
-        pytest
-        pytest-cov
-    commands =
-        pytest {posargs:tests}
-
-    [testenv:ruff]
-    deps =
-        ruff
-    commands =
-        ruff check src tests
-
-    [testenv:mypy]
-    deps =
-        mypy
-    commands =
-        mypy src
-        mypy tests
-
-    [testenv:docs]
-    extras =
-        docs
-    commands =
-        sphinx-build -b html -d "{envtmpdir}{/}doctree" docs "{toxworkdir}{/}docs_out" --color
-"""
