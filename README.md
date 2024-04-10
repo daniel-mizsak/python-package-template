@@ -14,6 +14,7 @@ A GitHub template with my python package configurations.
 ## Package tools
 This template package relies on the synchronized cooperation of several exceptional tools.\
 These tools include:
+- [Codecov](https://docs.codecov.com/docs/quick-start) - Code coverage
 - [Pre-Commit](https://pre-commit.com/) - Git hooks running on commits
 - [Hatch](https://hatch.pypa.io/latest/) - Package building
 - [MyPy](https://mypy.readthedocs.io/en/stable/) - Static type checking
@@ -25,6 +26,12 @@ For documentation:
 - [Sphinx](https://www.sphinx-doc.org/en/master/) - Documentation building
 - [ReadTheDocs](https://readthedocs.org/) - Documentation hosting
 - [GitHub Pages](https://pages.github.com/) - Documentation hosting
+
+### Codecov
+Codecov is used to check the code coverage of the tests.\
+It also provides a badge that can be added to the README file.
+
+The way it is set up can be seen in the `.github/workflows/ci.yml` file, but it will probably be moved to my reusable [GitHub Workflows repository](https://github.com/daniel-mizsak/workflows).
 
 ### Pre-Commit
 Pre-Commit is used to run certain checks on the code before it is committed.\
