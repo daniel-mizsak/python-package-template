@@ -11,7 +11,7 @@
 A GitHub template with my python package configurations.
 
 ## Package tools
-This template package relies on the synchronized cooperation of several advanced tools.\
+This template package relies on the synchronized cooperation of several exceptional tools.\
 These tools include:
 - [Pre-Commit](https://pre-commit.com/) - Git hooks running on commits
 - [Hatch](https://hatch.pypa.io/latest/) - Package building
@@ -71,7 +71,7 @@ The settings are specified in the `tox.ini` file.
 
 ### Documentation
 The documentation is built with Sphinx and it is hosted both on ReadTheDocs and GitHub Pages.\
-Both of these services are recommended and ReadTheDocs does require a bit more setup, but I generally prefer it.
+Both of these services are recommended, however ReadTheDocs requires a bit more setup, but I prefer it as it does not require an extra feature branch to be present.
 
 ## GitHub repository settings
 The following settings are enabled in my repository settings:
