@@ -37,3 +37,11 @@ jobs:
 
       - name: Publish the package.
         uses: pypa/gh-action-pypi-publish@release/v1
+
+  gh-pages:
+    permissions:
+      contents: write
+
+    uses: daniel-mizsak/workflows/.github/workflows/gh-pages.yml@main
+    with:
+      python-version: "3.12"
