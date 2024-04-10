@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 # Project Metadata
 [project]
 name = "python-package-template-pypi" # Name has to be unique on pypi.
-version = "0.0.2"
+version = "0.0.3"
 description = "A github template with my python package configurations."
 readme = "README.md"
 requires-python = ">=3.12"
