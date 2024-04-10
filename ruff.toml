@@ -1,0 +1,35 @@
+# Exclude a variety of commonly ignored directories.
+# exclude = [""]
+
+line-length = 120
+indent-width = 4
+
+target-version = "py312"
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "D203",  # one-blank-line-before-class
+    "D212",  # multi-line-summary-first-line
+    "FIX",   # flake8-fixme
+    "INP",   # flake8-no-pep420
+    "S104",  # hardcoded-bind-all-interfaces
+    "TD002", # missing-todo-author
+    "TD003", # missing-todo-link
+]
+[lint.per-file-ignores]
+"__init__.py" = [
+    "D104", # undocumented-public-package
+]
+"tests/**/*.py" = [
+    "ANN001",  # missing-type-function-argument
+    "ANN201",  # missing-return-type-undocumented-public-function
+    "D",       # pydocstyle
+    "PLR2004", # magic-value-comparison
+    "S101",    # assert
+]
+[lint.pydocstyle]
+convention = "google"
+
+[format]
+quote-style = "double"
