@@ -27,33 +27,37 @@ For documentation:
 
 ### Pre-Commit
 Pre-Commit is used to run certain checks on the code before it is committed.\
-The specific checks are defined in the `.pre-commit-config.yaml` file.\
+These checks are defined in the `.pre-commit-config.yaml` file.\
 To use pre-commit is has to be installed in the virtual environment and also added to the git hooks by running `pre-commit install`.
 
-In this repository pre-commit is set up to check for a bunch of general issues and to run formatting and linting checks with `ruff`.
+In this repository pre-commit is set up for a number of general issues and to run formatting and linting checks with `ruff`.
 
 ### Hatch
-Hatch is only used to build the package, but it can be used for a lot more.\
-The settings for hatch are defined in the `pyproject.toml` file.\
-It has the potential to replace `tox` at some point, but for now I am more comfortable with `tox`.\
-If the package building is more complex and requires additional settings or files it is recommended to read the hatch documentation.
-
+Hatch is primarily used to build the package, but it can also be used to run certain tests in isolated environments.\
+If the package building is more complex and requires additional settings or files it is recommended to read the hatch documentation.\
 In this repository hatch is set up with the local path of the package as it differs from the one specified in the `pyproject.toml` file which is used for publishing to PyPI.
+
+The isolated environment settings for hatch are defined in the `hatch.toml` file.\
+I was thinking about replacing `tox` with `hatch`, but for now `tox` fits more into my workflows.
 
 ### MyPy
 Python by default is a dynamically typed language, but being explicit about types can help to avoid bugs.\
-MyPy makes sure that the types are correct and consistent throughout the code.\
+MyPy makes sure that the types are correct and consistent throughout the code.
 
+The `mypy` related settings are defined in the `pyproject.toml` file.\
 In this repository MyPy is set up be `strict` and it also checks for some additional issues.
 
 ### Pytest
 Pytest is a modern testing framework for Python.\
 It is way too complex to explain it here, but it runs all the tests from the `tests` directory and also checks the code coverage.
 
+Its settings are defined in the `pyproject.toml` file.
+
 ### Ruff
 Ruff is a formatter and linter that is built on top of a lot of open source tools.\
 It is very fast and unifies all the useful code quality solutions into a single tool.\
 By default it is not too strict, but I like to make it strict by selecting all the available rules.
+The exact configuration is defined in the `ruff.toml` file.
 
 If for some reason it makes sense not to comply with a certain rule, it can be disabled for that line using `# noqa: <rule number>`.
 
@@ -63,10 +67,11 @@ It makes sure that the package setup is consistent and that the tools are workin
 It can be used to test different Python versions and different testing scenarios.
 
 In this repository tox is set up to use python 3.12 and run pytest, ruff, mypy and documentation tests.
+The settings are specified in the `tox.ini` file.
 
 ### Documentation
-The documentation is built with Sphinx and it is hosted both on ReadTheDocs and GitHub Pages.\ Both of these services are recommended and ReadTheDocs does require a bit more setup, but I generally prefer it.
-
+The documentation is built with Sphinx and it is hosted both on ReadTheDocs and GitHub Pages.\
+Both of these services are recommended and ReadTheDocs does require a bit more setup, but I generally prefer it.
 
 ## GitHub repository settings
 The following settings are enabled in my repository settings:
