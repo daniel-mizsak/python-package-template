@@ -11,7 +11,7 @@
 A GitHub template with my python package configurations.
 
 ## Package tools
-This template package relies on the synchronized cooperation of several advanced tools.\
+This template package relies on the synchronized cooperation of several exceptional tools.\
 These tools include:
 - [Pre-Commit](https://pre-commit.com/) - Git hooks running on commits
 - [Hatch](https://hatch.pypa.io/latest/) - Package building
@@ -65,7 +65,8 @@ It can be used to test different Python versions and different testing scenarios
 In this repository tox is set up to use python 3.12 and run pytest, ruff, mypy and documentation tests.
 
 ### Documentation
-The documentation is built with Sphinx and it is hosted both on ReadTheDocs and GitHub Pages.\ Both of these services are recommended and ReadTheDocs does require a bit more setup, but I generally prefer it.
+The documentation is built with Sphinx and it is hosted both on ReadTheDocs and GitHub Pages.\
+Both of these services are recommended, however ReadTheDocs requires a bit more setup, but I prefer it as it does not require an extra feature branch to be present.
 
 
 ## GitHub repository settings

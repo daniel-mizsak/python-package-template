@@ -13,13 +13,3 @@ jobs:
     uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
     with:
       python-version: "3.12"
-
-  gh-pages:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: tox
-    permissions:
-      contents: write
-
-    uses: daniel-mizsak/workflows/.github/workflows/gh-pages.yml@main
-    with:
-      python-version: "3.12"
