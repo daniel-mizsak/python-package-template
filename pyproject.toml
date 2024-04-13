@@ -43,5 +43,5 @@ warn_unused_ignores = true
 
 # Pytest
 [tool.pytest.ini_options]
-addopts = "--cov=python_package_template --cov=tests --cov-config=pyproject.toml --cov-report=term-missing --cov-report=html"
+addopts = "--cov=python_package_template --cov=tests --cov-config=pyproject.toml --cov-report=term-missing --cov-report=html --cov-report=xml"
 testpaths = ["tests"]
