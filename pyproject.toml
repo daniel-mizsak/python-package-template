@@ -9,13 +9,14 @@ name = "python-package-template-pypi" # Name has to be unique on pypi.
 version = "0.0.3"
 description = "A github template with my python package configurations."
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 license = { file = "LICENSE" }
 authors = [{ name = "Daniel Mizsak", email = "info@pythonvilag.hu" }]
 keywords = []
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = []

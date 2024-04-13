@@ -3,7 +3,7 @@ dependencies = ["pytest", "pytest-cov"]
 [envs.default.scripts]
 run = "pytest"
 [[envs.default.matrix]]
-python = ["3.12"]
+python = ["3.11", "3.12"]
 
 [envs.ruff]
 dependencies = ["ruff"]

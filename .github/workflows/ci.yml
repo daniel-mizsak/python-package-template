@@ -8,9 +8,9 @@ on:
 
 jobs:
   tox:
-    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
+    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@feature/python-versions
     with:
-      python-version: "3.12"
+      python-versions: "['3.11', '3.12']"
 
   codecov:
     needs: tox
