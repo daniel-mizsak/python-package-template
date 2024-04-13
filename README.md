@@ -31,7 +31,7 @@ For documentation:
 Codecov is used to check the code coverage of the tests.\
 It also provides a badge that can be added to the README file.
 
-The way it is set up can be seen in the `.github/workflows/ci.yml` file, but it will probably be moved to my reusable [GitHub Workflows repository](https://github.com/daniel-mizsak/workflows).
+Codecov is set up to be part of the [tox reusable workflow](https://github.com/daniel-mizsak/workflows/blob/main/.github/workflows/tox.yml), but for this action it is important to generate the coverage report using the `--cov-report=xml` flag in the `pyproject.toml` file.
 
 ### Pre-Commit
 Pre-Commit is used to run certain checks on the code before it is committed.\
