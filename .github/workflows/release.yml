@@ -12,6 +12,7 @@ jobs:
       environment: pypi
       repository-url: https://pypi.org/project/python-package-template-pypi/
       python-version: "3.12"
+    secrets: inherit
 
   gh-pages:
     permissions:
@@ -20,3 +21,4 @@ jobs:
     uses: daniel-mizsak/workflows/.github/workflows/gh-pages.yml@main
     with:
       python-version: "3.12"
+    secrets: inherit
