@@ -21,4 +21,3 @@ jobs:
     uses: daniel-mizsak/workflows/.github/workflows/gh-pages.yml@main
     with:
       python-version: "3.12"
-    secrets: inherit
