@@ -10,7 +10,6 @@ jobs:
     uses: daniel-mizsak/workflows/.github/workflows/pypi.yml@main
     with:
       environment: pypi
-      repository-url: https://pypi.org/project/python-package-template-pypi/
       python-version: "3.12"
     secrets: inherit
 
