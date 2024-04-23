@@ -15,3 +15,15 @@ def add_five(x: int) -> int:
         int: The input incremented by 5.
     """
     return x + 5
+
+
+def subtract_three(x: int) -> int:
+    """Decrement the input by 3.
+
+    Args:
+        x (int): The input number.
+
+    Returns:
+        int: The input decremented by 3.
+    """
+    return x - 3
