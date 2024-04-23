@@ -6,13 +6,13 @@ build-backend = "hatchling.build"
 # Project Metadata
 [project]
 name = "python-package-template-pypi" # Name has to be unique on pypi.
-version = "0.0.4"
+version = "0.1.0"
 description = "A github template with my python package configurations."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
 authors = [{ name = "Daniel Mizsak", email = "info@pythonvilag.hu" }]
-keywords = []
+keywords = ["python", "template", "package", "github", "pypi"]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
@@ -23,8 +23,15 @@ dependencies = []
 [project.optional-dependencies]
 dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
 docs = ["furo", "sphinx", "sphinx-copybutton"]
+
+[project.scripts]
+ppt = "python_package_template.cli:main"
+
 [project.urls]
+Homepage = "https://pythonvilag.hu/"
+Documentation = "https://python-package-template-pypi.readthedocs.io/en/latest/"
 Repository = "https://github.com/daniel-mizsak/python-package-template"
+Issues = "https://github.com/daniel-mizsak/python-package-template/issues"
 
 # Tools
 # Hatch
@@ -45,3 +52,8 @@ warn_unused_ignores = true
 [tool.pytest.ini_options]
 addopts = "--cov=python_package_template --cov=tests --cov-config=pyproject.toml --cov-report=term-missing --cov-report=html --cov-report=xml"
 testpaths = ["tests"]
+
+# Coverage
+[tool.coverage.report]
+exclude_also = ["if TYPE_CHECKING:", "if __name__ == '__main__':"]
+omit = ["**/__main__.py"]
