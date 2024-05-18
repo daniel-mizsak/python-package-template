@@ -28,10 +28,10 @@ docs = ["furo", "sphinx", "sphinx-copybutton"]
 ppt = "python_package_template.cli:main"
 
 [project.urls]
-Homepage = "https://pythonvilag.hu/"
 Documentation = "https://python-package-template-pypi.readthedocs.io/en/latest/"
-Repository = "https://github.com/daniel-mizsak/python-package-template"
+Homepage = "https://pythonvilag.hu/"
 Issues = "https://github.com/daniel-mizsak/python-package-template/issues"
+Repository = "https://github.com/daniel-mizsak/python-package-template"
 
 # Tools
 # Hatch

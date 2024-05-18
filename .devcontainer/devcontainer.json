@@ -1,4 +1,25 @@
 {
-  "name": "Python Development Environment",
-  "image": "python:3.12"
+  "name": "Python 3.12 Development Environment",
+  "image": "python:3.12",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "njpwerner.autodocstring",
+        "aaron-bond.better-comments",
+        "streetsidesoftware.code-spell-checker",
+        "tamasfe.even-better-toml",
+        "GitHub.copilot",
+        "eamodio.gitlens",
+        "oderwat.indent-rainbow",
+        "ms-python.mypy-type-checker",
+        "ms-python.python",
+        "charliermarsh.ruff"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -e '.[dev]'",
+  "runArgs": [
+    "--name",
+    "${localEnv:USER}_python_devcontainer"
+  ]
 }
