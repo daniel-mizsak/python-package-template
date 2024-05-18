@@ -3,6 +3,10 @@
 
 # exclude: ""
 
+# pre-commit ci
+ci:
+  autoupdate_schedule: monthly
+
 # pre-commit
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
