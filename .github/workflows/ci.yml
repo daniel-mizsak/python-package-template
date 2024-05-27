@@ -10,6 +10,6 @@ jobs:
   tox:
     uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
     with:
-      python-version: "['3.11', '3.12']"
+      python-versions: "['3.11', '3.12']"
       codecov: true
     secrets: inherit
