@@ -1,59 +1,59 @@
 # Build System
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+  requires = ["hatchling"]
+  build-backend = "hatchling.build"
 
 # Project Metadata
 [project]
-name = "python-package-template-pypi" # Name has to be unique on pypi.
-version = "0.1.0"
-description = "A github template with my python package configurations."
-readme = "README.md"
-requires-python = ">=3.11"
-license = { file = "LICENSE" }
-authors = [{ name = "Daniel Mizsak", email = "info@pythonvilag.hu" }]
-keywords = ["python", "template", "package", "github", "pypi"]
-classifiers = [
+  name = "python-package-template-pypi" # Name has to be unique on pypi.
+  version = "0.1.1"
+  description = "A github template with my python package configurations."
+  readme = "README.md"
+  requires-python = ">=3.11"
+  license = { file = "LICENSE" }
+  authors = [{ name = "Daniel Mizsak", email = "info@pythonvilag.hu" }]
+  keywords = ["python", "template", "package", "github", "pypi"]
+  classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-]
-dependencies = []
-[project.optional-dependencies]
-dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
-docs = ["furo", "sphinx", "sphinx-copybutton"]
+  ]
+  dependencies = []
+  [project.optional-dependencies]
+    dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
+    docs = ["furo", "sphinx", "sphinx-copybutton"]
 
-[project.scripts]
-ppt = "python_package_template.cli:main"
+  [project.scripts]
+    ppt = "python_package_template.cli:main"
 
-[project.urls]
-Documentation = "https://python-package-template-pypi.readthedocs.io/en/latest/"
-Homepage = "https://pythonvilag.hu/"
-Issues = "https://github.com/daniel-mizsak/python-package-template/issues"
-Repository = "https://github.com/daniel-mizsak/python-package-template"
+  [project.urls]
+    Documentation = "https://python-package-template-pypi.readthedocs.io/en/latest/"
+    Homepage = "https://pythonvilag.hu/"
+    Issues = "https://github.com/daniel-mizsak/python-package-template/issues"
+    Repository = "https://github.com/daniel-mizsak/python-package-template"
 
 # Tools
 # Hatch
 [tool.hatch.build.targets.wheel]
-packages = ["src/python_package_template"]
+  packages = ["src/python_package_template"]
 
 # MyPy
 [tool.mypy]
-ignore_missing_imports = true
-pretty = true
-show_column_numbers = true
-show_error_context = true
-strict = true
-warn_unreachable = true
-warn_unused_ignores = true
+  ignore_missing_imports = true
+  pretty = true
+  show_column_numbers = true
+  show_error_context = true
+  strict = true
+  warn_unreachable = true
+  warn_unused_ignores = true
 
 # Pytest
 [tool.pytest.ini_options]
-addopts = "--cov=python_package_template --cov=tests --cov-config=pyproject.toml --cov-report=term-missing --cov-report=html --cov-report=xml"
-testpaths = ["tests"]
+  addopts = "--cov=python_package_template --cov=tests --cov-config=pyproject.toml --cov-report=term-missing --cov-report=html --cov-report=xml"
+  testpaths = ["tests"]
 
 # Coverage
 [tool.coverage.report]
-exclude_also = ["if TYPE_CHECKING:", "if __name__ == '__main__':"]
-omit = ["**/__main__.py"]
+  exclude_also = ["if TYPE_CHECKING:", "if __name__ == '__main__':"]
+  omit = ["**/__main__.py"]

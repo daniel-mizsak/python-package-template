@@ -7,3 +7,4 @@ This is a template repository for my python packages.
    :hidden:
 
    add_five
+   subtract_three
