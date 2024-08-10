@@ -16,4 +16,4 @@ To increment the value of a number by five, use the `add_five` function.
 Description of the `add_five` function:
 ---------------------------------------
 
-.. autofunction:: python_package_template.main.add_five
+.. autofunction:: python_package_template.add_five
