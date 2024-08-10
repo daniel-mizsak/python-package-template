@@ -23,6 +23,12 @@ repos:
       - id: name-tests-test
       - id: trailing-whitespace
 
+  # gitleaks
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+    hooks:
+      - id: gitleaks
+
   # ruff
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.4.4
