@@ -38,3 +38,9 @@ repos:
         args: [--line-length=120]
       # Ruff formatting
       - id: ruff-format
+
+  # codespell
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.4
+    hooks:
+      - id: codespell

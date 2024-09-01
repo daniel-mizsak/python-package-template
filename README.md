@@ -9,7 +9,19 @@
 </div>
 
 ## Overview
-A GitHub template with my python package configurations.
+A GitHub template with my python package configurations.\
+To make sure that the all the tools are available in your [virtual environment](https://docs.python.org/3/library/venv.html) (and that you are running your code with its latest modifications), install the package in editable mode by running:
+
+```bash
+pip install --editable ".[dev]"
+```
+
+
+> [!IMPORTANT]
+> Please note that this template represents my personal understanding of the current best practices.\
+> It is advised to do further research before implementing these configurations in your environment.
+
+Feel free to [open a new issue](https://github.com/daniel-mizsak/python-package-template/issues/new/choose) if you have any questions or suggestions.
 
 ## Package tools
 This template package relies on the synchronized cooperation of several exceptional tools.\
@@ -40,6 +52,12 @@ To use pre-commit is has to be installed in the virtual environment and also add
 
 In this repository pre-commit is set up for a number of general issues and to run formatting and linting checks with `ruff`.
 
+Call pre-commit by running:
+
+```bash
+pre-commit run --all-files
+```
+
 ### Hatch
 Hatch is primarily used to build the package, but it can also be used to run certain tests in isolated environments.\
 If the package building is more complex and requires additional settings or files it is recommended to read the hatch documentation.\
@@ -55,11 +73,23 @@ MyPy makes sure that the types are correct and consistent throughout the code.
 The `mypy` related settings are defined in the `pyproject.toml` file.\
 In this repository MyPy is set up be `strict` and it also checks for some additional issues.
 
+Call mypy by running:
+
+```bash
+mypy src tests
+```
+
 ### Pytest
-Pytest is a modern testing framework for Python.\
+Pytest is a modern testing framework for python.\
 It is way too complex to explain it here, but it runs all the tests from the `tests` directory and also checks the code coverage.
 
 Its settings are defined in the `pyproject.toml` file.
+
+Call pytest by running:
+
+```bash
+pytest
+```
 
 ### Ruff
 Ruff is a formatter and linter that is built on top of a lot of open source tools.\
@@ -69,13 +99,25 @@ The exact configuration is defined in the `ruff.toml` file.
 
 If for some reason it makes sense not to comply with a certain rule, it can be disabled for that line using `# noqa: <rule number>`.
 
+Call ruff by running:
+
+```bash
+ruff check src tests
+```
+
 ### Tox
 Tox is useful for running the above tools in an isolated environment.\
 It makes sure that the package setup is consistent and that the tools are working as expected.\
-It can be used to test different Python versions and different testing scenarios.
+It can be used to test different python versions and different testing scenarios.
 
-In this repository tox is set up to use python 3.12 and run pytest, ruff, mypy and documentation tests.
+In this repository tox is set up to use python 3.11, 3.12 and run pytest, ruff, mypy and documentation tests.
 The settings are specified in the `tox.ini` file.
+
+Call tox by running:
+
+```bash
+tox
+```
 
 ### Documentation
 The documentation is built with Sphinx and it is hosted both on ReadTheDocs and GitHub Pages.\
@@ -114,7 +156,8 @@ Protect matching branches
 - Dismiss stale pull request approvals when new commits are pushed
 - Require status checks to pass before merging
     - `pre-commit.ci - pr`
-    - `tox / tox`
+    - `tox / tox (3.11)`
+    - `tox / tox (3.12)`
 - Do not allow bypassing the above settings
 
 <br>
@@ -135,7 +178,6 @@ Pages/Build and deployment:
 - Branch: `gh-pages` (root)
 
 ## Setup PyPi trusted publishing
-
 [PyPI publishing settings](https://pypi.org/manage/account/publishing/)
 
 Add a new pending publisher:
@@ -144,3 +186,16 @@ Add a new pending publisher:
 - Owner: `daniel-mizsak`
 - Repository name: `python-package-template`
 - Workflow name: `release.yml`
+
+(I am currently not using trusted publishing, as it does not support getting called from a reusable GitHub workflow.\
+Instead, I am calling my [PyPI publishing workflow](https://github.com/daniel-mizsak/workflows/blob/main/.github/workflows/pypi.yml) with an API token.)
+
+## More examples
+I am trying to use this template in all of my repositories and also contribute back here with new best practices I find.
+Some of my other repositories that may be interesting to look at:
+- [falcon-formation](https://github.com/daniel-mizsak/falcon-formation) - Create evenly distributed hockey teams.
+- [checkmark](https://github.com/daniel-mizsak/checkmark) - Automated assessment generator and evaluator system.
+- [pythonvilag-website](https://github.com/PythonVilag/pythonvilag-website) - Source code that powers the Python Világ website.
+- [private-lecture-automation](https://github.com/PythonVilag/private-lecture-automation) - Automation tools for private lecture management.
+
+I have also integrated some of the above mentioned tools into my `vscode` settings. You can find them in my [macos-setup](https://github.com/daniel-mizsak/macos-setup/blob/main/dotfiles/vscode/settings.json) repository.
