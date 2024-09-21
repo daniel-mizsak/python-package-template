@@ -4,6 +4,8 @@ Main module of the package.
 @author "Daniel Mizsak" <info@pythonvilag.hu>
 """
 
+import numpy as np
+
 
 def add_five(x: int) -> int:
     """Increment the input by 5.
@@ -26,4 +28,4 @@ def subtract_three(x: int) -> int:
     Returns:
         int: The input decremented by 3.
     """
-    return x - 3
+    return int(np.subtract(x, 3))
