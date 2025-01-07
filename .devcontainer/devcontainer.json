@@ -1,8 +1,12 @@
 {
-  "name": "Python 3.12 Development Environment",
-  "image": "python:3.12",
+  "name": "Python Package Template Development Environment",
+  "dockerComposeFile": "compose.yml",
+  "service": "ppt-devcontainer",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "pip install -e '.[dev]'",
   "customizations": {
     "vscode": {
+      "python.defaultInterpreterPath": "/usr/local/bin/python",
       "extensions": [
         "njpwerner.autodocstring",
         "aaron-bond.better-comments",
@@ -13,13 +17,9 @@
         "oderwat.indent-rainbow",
         "ms-python.mypy-type-checker",
         "ms-python.python",
+        "mechatroner.rainbow-csv",
         "charliermarsh.ruff"
       ]
     }
-  },
-  "postCreateCommand": "pip install -e '.[dev]'",
-  "runArgs": [
-    "--name",
-    "${localEnv:USER}_python_devcontainer"
-  ]
+  }
 }
