@@ -1,15 +1,22 @@
 ---
 name: CI
 on:
-  pull_request:
+  workflow_dispatch:
+  push:
     branches:
       - main
-  push:
+  pull_request:
+  schedule:
+    - cron: '0 12 * * 6'  # Every Saturday at 12:00
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   tox:
     uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
     with:
-      python-versions: "['3.11', '3.12']"
+      python_versions: "['3.11', '3.12']"
       codecov: true
     secrets: inherit
