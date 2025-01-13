@@ -6,10 +6,14 @@ on:
       - main
   push:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   tox:
     uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
     with:
-      python-versions: "['3.11', '3.12']"
+      python_versions: "['3.11', '3.12']"
       codecov: true
     secrets: inherit
