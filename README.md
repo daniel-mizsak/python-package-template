@@ -9,16 +9,20 @@
 </div>
 
 ## Overview
-A GitHub template with my python package configurations.\
+A GitHub template with my python package configurations.
+
+
 To make sure that the all the tools are available in your [virtual environment](https://docs.python.org/3/library/venv.html) (and that you are running your code with its latest modifications), install the package in editable mode by running:
 
 ```bash
 pip install --editable ".[dev]"
 ```
 
+Alternatively, you can `Dev Containers: Reopen in Container` in Visual Studio Code if `Docker` is installed.
 
-> [!IMPORTANT]
-> Please note that this template represents my personal understanding of the current best practices.\
+
+> [!WARNING]
+> This template represents my personal understanding of the current best practices.\
 > It is advised to do further research before implementing these configurations in your environment.
 
 Feel free to [open a new issue](https://github.com/daniel-mizsak/python-package-template/issues/new/choose) if you have any questions or suggestions.
@@ -141,24 +145,27 @@ General/Features:
 
 General/Pull Requests:
 
-- Allow merge commits
 - Allow squash merging
-- Allow rebase merging
+- Always suggest updating pull request branches
 - Automatically delete head branches
 
 <br>
 
-Branches/Branch protection rules:\
+Rules/Rulesets:
 `main`\
-Protect matching branches
+Target branches: `Default`
 
-- Require pull request reviews before merging
-- Dismiss stale pull request approvals when new commits are pushed
+- Restrict deletions
+- Require pull request before merging
+    - Dismiss stale pull request approvals when new commits are pushed
+    - Require review from Code Owners
+    - Allowed merge methods: `Squash`
 - Require status checks to pass before merging
+    - Require branches to be up to date before merging
     - `pre-commit.ci - pr`
     - `tox / tox (3.11)`
     - `tox / tox (3.12)`
-- Do not allow bypassing the above settings
+- Block force pushes
 
 <br>
 

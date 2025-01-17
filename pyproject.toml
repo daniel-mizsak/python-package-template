@@ -55,5 +55,6 @@
 
 # Coverage
 [tool.coverage.report]
+  fail_under = 80
   exclude_also = ["if TYPE_CHECKING:", "if __name__ == '__main__':"]
   omit = ["**/__main__.py"]
