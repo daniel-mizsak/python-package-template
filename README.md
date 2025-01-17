@@ -9,7 +9,9 @@
 </div>
 
 ## Overview
-A GitHub template with my python package configurations.\
+A GitHub template with my python package configurations.
+
+
 To make sure that the all the tools are available in your [virtual environment](https://docs.python.org/3/library/venv.html) (and that you are running your code with its latest modifications), install the package in editable mode by running:
 
 ```bash
