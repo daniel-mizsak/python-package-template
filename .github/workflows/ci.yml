@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   tox:
-    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@feature/update-tox
+    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
     with:
       python_versions: "['3.11', '3.12']"
       codecov: true
