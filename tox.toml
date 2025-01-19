@@ -1,0 +1,72 @@
+requires = ["tox"]
+env_list = ["py3.11", "py3.12", "codecov", "ruff", "mypy", "docs", "build"]
+skip_missing_interpreters = true
+
+[gh.python]
+  "3.11" = ["3.11"]
+  "3.12" = ["3.12", "codecov", "ruff", "mypy", "docs", "build"]
+
+[env_run_base]
+  description = "Run tests."
+  deps = ["pytest"]
+  commands = [["pytest"]]
+
+[env.codecov]
+  description = "Run coverage report."
+  deps = ["pytest", "pytest-cov"]
+  commands = [
+    [
+      "pytest",
+      "--cov=tests",
+      "--cov-config=pyproject.toml",
+      "--cov-fail-under=100",
+    ],
+    [
+      "pytest",
+      "--cov=python_package_template",
+      "--cov-config=pyproject.toml",
+      "--cov-report=term-missing",
+      "--cov-fail-under=80",
+      "--cov-report=xml:{work_dir}/artifacts/coverage.xml",
+    ],
+  ]
+
+[env.ruff]
+  description = "Lint and format the code."
+  deps = ["ruff"]
+  commands = [["ruff", "check", "src", "tests"]]
+
+[env.mypy]
+  description = "Static type checking."
+  deps = ["mypy"]
+  commands = [["mypy", "src", "tests"]]
+
+[env.docs]
+  description = "Build the documentation."
+  dependency_groups = ["docs"]
+  commands = [
+    [
+      "sphinx-build",
+      "--builder",
+      "html",
+      "--doctree-dir",
+      "{env_tmp_dir}/doctree",
+      "docs",
+      "{work_dir}/artifacts/docs",
+      "--color",
+      "--fail-on-warning",
+    ],
+  ]
+
+[env.build]
+  description = "Build the package."
+  deps = ["build"]
+  commands = [
+    [
+      "python",
+      "-m",
+      "build",
+      "--outdir",
+      "{work_dir}/artifacts/dist",
+    ],
+  ]
