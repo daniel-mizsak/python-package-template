@@ -15,8 +15,9 @@ A GitHub template with my python package configurations.
 To make sure that the all the tools are available in your [virtual environment](https://docs.python.org/3/library/venv.html) (and that you are running your code with its latest modifications), install the package in editable mode by running:
 
 ```bash
-pip install --editable ".[dev]"
+pip install --editable .
 ```
+<!-- TODO: Update `pip install` to also install dependency-groups -->
 
 Alternatively, you can `Dev Containers: Reopen in Container` in Visual Studio Code if `Docker` is installed.
 

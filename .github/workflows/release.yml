@@ -6,17 +6,46 @@ on:
       - "*"
 
 jobs:
-  release:
-    uses: daniel-mizsak/workflows/.github/workflows/pypi.yml@main
+  tox:
+    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
     with:
-      environment: pypi
-      python_version: "3.12"
+      python_versions: "['3.11', '3.12']"
+      codecov: true
     secrets: inherit
 
-  gh-pages:
-    permissions:
-      contents: write
 
-    uses: daniel-mizsak/workflows/.github/workflows/gh-pages.yml@main
-    with:
-      python_version: "3.12"
+  pypi-publish:
+    needs: tox
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+    permissions:
+      id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
+
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - name: Publish build artifacts to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+
+  gh-pages-publish:
+    needs: tox
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download docs artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: docs
+          path: docs
+
+      - name: Publish docs artifacts to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs

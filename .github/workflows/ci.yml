@@ -6,6 +6,8 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
   schedule:
     - cron: '0 12 * * 6'  # Every Saturday at 12:00
 
@@ -15,7 +17,7 @@ concurrency:
 
 jobs:
   tox:
-    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
+    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@feature/update-tox
     with:
       python_versions: "['3.11', '3.12']"
       codecov: true
