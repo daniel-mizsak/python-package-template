@@ -43,7 +43,7 @@ skip_missing_interpreters = true
 
 [env.docs]
   description = "Build the documentation."
-  dependency_groups = ["docs"]
+  extras = ["docs"]
   commands = [
     [
       "sphinx-build",

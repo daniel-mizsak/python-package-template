@@ -20,6 +20,9 @@
     "Programming Language :: Python :: 3.12",
   ]
   dependencies = ["numpy"]
+  [project.optional-dependencies]
+    dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
+    docs = ["furo", "sphinx", "sphinx-copybutton"]
 
   [project.scripts]
     ppt = "python_package_template.cli:main"
@@ -29,10 +32,6 @@
     Homepage = "https://pythonvilag.hu/"
     Issues = "https://github.com/daniel-mizsak/python-package-template/issues"
     Repository = "https://github.com/daniel-mizsak/python-package-template"
-
-[dependency-groups]
-  dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
-  docs = ["furo", "sphinx", "sphinx-copybutton"]
 
 # Tools
 # Hatch
