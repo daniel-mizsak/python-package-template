@@ -1,13 +1,13 @@
 # Build System
 [build-system]
-  requires = ["hatchling"]
+  requires = ["hatchling", "hatch-vcs"]
   build-backend = "hatchling.build"
 
 # Project Metadata
 [project]
   name = "python-package-template-pypi" # Name has to be unique on pypi.
-  version = "0.1.1"
-  description = "A github template with my python package configurations."
+  dynamic = ["version"]
+  description = "A GitHub template with my python package configurations."
   readme = "README.md"
   requires-python = ">=3.11"
   license = { file = "LICENSE" }
@@ -21,7 +21,7 @@
   ]
   dependencies = ["numpy"]
   [project.optional-dependencies]
-    dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
+    dev = ["mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
     docs = ["furo", "sphinx", "sphinx-copybutton"]
 
   [project.scripts]
@@ -35,8 +35,15 @@
 
 # Tools
 # Hatch
-[tool.hatch.build.targets.wheel]
-  packages = ["src/python_package_template"]
+[tool.hatch]
+  [tool.hatch.build.targets.wheel]
+    packages = ["src/python_package_template"]
+
+  [tool.hatch.version]
+    source = "vcs"
+    [tool.hatch.version.raw-options]
+      version_scheme = "no-guess-dev"
+      local_scheme = "no-local-version"
 
 # MyPy
 [tool.mypy]
@@ -50,11 +57,9 @@
 
 # Pytest
 [tool.pytest.ini_options]
-  addopts = "--cov=python_package_template --cov=tests --cov-config=pyproject.toml --cov-report=term-missing --cov-report=html --cov-report=xml"
   testpaths = ["tests"]
 
 # Coverage
 [tool.coverage.report]
-  fail_under = 80
   exclude_also = ["if TYPE_CHECKING:", "if __name__ == '__main__':"]
   omit = ["**/__main__.py"]
