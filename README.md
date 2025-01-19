@@ -32,7 +32,6 @@ This template package relies on the synchronized cooperation of several exceptio
 These tools include:
 - [Codecov](https://docs.codecov.com/docs/quick-start) - Code coverage
 - [Pre-Commit](https://pre-commit.com/) - Git hooks running on commits
-- [Hatch](https://hatch.pypa.io/latest/) - Package building
 - [MyPy](https://mypy.readthedocs.io/en/stable/) - Static type checking
 - [Pytest](https://docs.pytest.org/en/latest/) - Testing and code coverage
 - [Ruff](https://docs.astral.sh/ruff/) - Formatting and linting
@@ -61,14 +60,6 @@ Call pre-commit by running:
 ```bash
 pre-commit run --all-files
 ```
-
-### Hatch
-Hatch is primarily used to build the package, but it can also be used to run certain tests in isolated environments.\
-If the package building is more complex and requires additional settings or files it is recommended to read the hatch documentation.\
-In this repository hatch is set up with the local path of the package as it differs from the one specified in the `pyproject.toml` file which is used for publishing to PyPI.
-
-The isolated environment settings for hatch are defined in the `hatch.toml` file.\
-I was thinking about replacing `tox` with `hatch`, but for now `tox` fits more into my workflows.
 
 ### MyPy
 Python by default is a dynamically typed language, but being explicit about types can help to avoid bugs.\

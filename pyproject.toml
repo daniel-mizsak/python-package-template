@@ -21,7 +21,7 @@
   ]
   dependencies = ["numpy"]
   [project.optional-dependencies]
-    dev = ["hatch", "mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
+    dev = ["mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
     docs = ["furo", "sphinx", "sphinx-copybutton"]
 
   [project.scripts]
