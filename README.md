@@ -46,7 +46,7 @@ For documentation:
 Codecov is used to check the code coverage of the tests.\
 It also provides a badge that can be added to the README file.
 
-Codecov is set up to be part of the [tox reusable workflow](https://github.com/daniel-mizsak/workflows/blob/main/.github/workflows/tox.yml), but for this action it is important to generate the coverage report using the `--cov-report=xml` flag in the `pyproject.toml` file.
+Codecov is set up to be part of the [tox reusable workflow](https://github.com/daniel-mizsak/workflows/blob/main/.github/workflows/tox.yml), but for this action it is important to generate the coverage report. Currently it is achieved by adding `--cov-report=xml:{work_dir}/artifacts/coverage.xml` as part of the `tox.toml` configuration and uploading/downloading the results using [GitHub Artifacts](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow).
 
 ### Pre-Commit
 Pre-Commit is used to run certain checks on the code before it is committed.\
@@ -101,12 +101,13 @@ ruff check src tests
 ```
 
 ### Tox
-Tox is useful for running the above tools in an isolated environment.\
+Tox is useful for running the above tools in isolated environments.\
 It makes sure that the package setup is consistent and that the tools are working as expected.\
 It can be used to test different python versions and different testing scenarios.
+I am also using it to automatically generate the documentation and build the package.
 
-In this repository tox is set up to use python 3.11, 3.12 and run pytest, ruff, mypy and documentation tests.
-The settings are specified in the `tox.ini` file.
+In this repository tox is set up to use python 3.11, 3.12 and run codecov, pytest, ruff, mypy, docs and package building.\
+The settings are specified in the `tox.toml` file.
 
 Call tox by running:
 
@@ -116,7 +117,7 @@ tox
 
 ### Documentation
 The documentation is built with Sphinx and it is hosted both on ReadTheDocs and GitHub Pages.\
-Both of these services are recommended, however ReadTheDocs requires a bit more setup, but I prefer it as it does not require an extra feature branch to be present.
+Both of these services are recommended, however ReadTheDocs requires a bit more setup.
 
 ## GitHub repository settings
 The following settings are enabled in my repository settings:
@@ -160,20 +161,10 @@ Target branches: `Default`
 
 <br>
 
-Environments:\
-`pypi`
-
-- Deployment protection rules:
-- Required reviewers:
-    `daniel-mizsak`
-- Allow administrators to bypass configured protection rules
-
-<br>
-
 Pages/Build and deployment:
 
-- Source: Deploy from branch
-- Branch: `gh-pages` (root)
+- Source: Github Actions
+The actual deployment is done by the `release` workflow.
 
 ## Setup PyPi trusted publishing
 [PyPI publishing settings](https://pypi.org/manage/account/publishing/)
@@ -185,8 +176,7 @@ Add a new pending publisher:
 - Repository name: `python-package-template`
 - Workflow name: `release.yml`
 
-(I am currently not using trusted publishing, as it does not support getting called from a reusable GitHub workflow.\
-Instead, I am calling my [PyPI publishing workflow](https://github.com/daniel-mizsak/workflows/blob/main/.github/workflows/pypi.yml) with an API token.)
+Currently I am using a reusable GitHub workflow to test and build the package ([tox](https://github.com/daniel-mizsak/workflows/blob/main/.github/workflows/tox.yml)), and do the publishing with a separate "non-reusble" workflow, so that trusted publishing can be used.
 
 ## More examples
 I am trying to use this template in all of my repositories and also contribute back here with new best practices I find.
@@ -196,4 +186,4 @@ Some of my other repositories that may be interesting to look at:
 - [pythonvilag-website](https://github.com/PythonVilag/pythonvilag-website) - Source code that powers the Python Világ website.
 - [private-lecture-automation](https://github.com/PythonVilag/private-lecture-automation) - Automation tools for private lecture management.
 
-I have also integrated some of the above mentioned tools into my `vscode` settings. You can find them in my [macos-setup](https://github.com/daniel-mizsak/macos-setup/blob/main/dotfiles/vscode/settings.json) repository.
+I have also integrated some of the above mentioned tools into my `vscode` settings. You can find them in my [more-than-just-dotfiles](https://github.com/daniel-mizsak/mtjd/blob/main/dotfiles/vscode/settings.json) repository.
