@@ -25,13 +25,13 @@ repos:
 
   # gitleaks
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.22.1
+    rev: v8.23.3
     hooks:
       - id: gitleaks
 
   # ruff
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.6
+    rev: v0.9.4
     hooks:
       # Ruff linting
       - id: ruff
@@ -41,6 +41,6 @@ repos:
 
   # codespell
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.1
     hooks:
       - id: codespell
