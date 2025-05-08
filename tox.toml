@@ -27,7 +27,6 @@ skip_missing_interpreters = true
       "--cov-config=pyproject.toml",
       "--cov-report=term-missing",
       "--cov-fail-under=80",
-      "--cov-report=xml:{work_dir}/artifacts/coverage.xml",
     ],
   ]
 
