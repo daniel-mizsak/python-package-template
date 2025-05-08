@@ -1,5 +1,5 @@
 ---
-name: release
+name: Release
 on:
   push:
     tags:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   tox:
-    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@main
+    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@v1
     with:
       python_versions: "['3.11', '3.12']"
       codecov: true
