@@ -44,6 +44,7 @@ skip_missing_interpreters = true
 [env.docs]
   description = "Build the documentation."
   extras = ["docs"]
+  set_env = { LC_ALL = "C.UTF-8" }
   commands = [
     [
       "sphinx-build",
