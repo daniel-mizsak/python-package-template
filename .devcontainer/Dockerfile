@@ -21,4 +21,3 @@ RUN apt-get update --quiet --quiet --yes \
  && rm --recursive --force /var/lib/apt/lists/* \
  && rm --recursive --force /tmp/* \
  && rm --recursive --force /var/tmp/*
-
