@@ -38,5 +38,4 @@ env/
 venv/
 
 # IDE
-.idea/
 .vscode/

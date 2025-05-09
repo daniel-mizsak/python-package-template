@@ -1,11 +1,12 @@
-## <div align="center"> 🐍 python-package-template</div>
-
+## <div align="center">🐍 python-package-template</div>
 <div align="center">
-<a href="https://github.com/daniel-mizsak/python-package-template/actions/workflows/ci.yml" target="_blank"><img src="https://github.com/daniel-mizsak/python-package-template/actions/workflows/ci.yml/badge.svg" alt="build status"></a>
-<a href="https://codecov.io/gh/daniel-mizsak/python-package-template" target="_blank"><img src="https://codecov.io/gh/daniel-mizsak/python-package-template/graph/badge.svg?token=SDXG1S8PVM"/></a>
-<a href="https://results.pre-commit.ci/latest/github/daniel-mizsak/python-package-template/main" target="_blank"><img src="https://results.pre-commit.ci/badge/github/daniel-mizsak/python-package-template/main.svg" alt="pre-commit.ci status"></a>
-<a href='https://python-package-template-pypi.readthedocs.io/en/latest/?badge=latest'><img src='https://readthedocs.org/projects/python-package-template-pypi/badge/?version=latest' alt='docs status' /></a>
-<a href="https://img.shields.io/github/license/daniel-mizsak/python-package-template" target="_blank"><img src="https://img.shields.io/github/license/daniel-mizsak/python-package-template" alt="license"></a>
+    <kbd>
+        <a href="https://github.com/daniel-mizsak/python-package-template/actions/workflows/ci.yml" target="_blank"><img src="https://github.com/daniel-mizsak/python-package-template/actions/workflows/ci.yml/badge.svg" alt="build status"></a>
+        <a href="https://codecov.io/gh/daniel-mizsak/python-package-template" target="_blank"><img src="https://codecov.io/gh/daniel-mizsak/python-package-template/graph/badge.svg?token=SDXG1S8PVM"/></a>
+        <a href="https://results.pre-commit.ci/latest/github/daniel-mizsak/python-package-template/main" target="_blank"><img src="https://results.pre-commit.ci/badge/github/daniel-mizsak/python-package-template/main.svg" alt="pre-commit.ci status"></a>
+        <a href='https://python-package-template-pypi.readthedocs.io/en/latest/?badge=latest'><img src='https://readthedocs.org/projects/python-package-template-pypi/badge/?version=latest' alt='docs status' /></a>
+        <a href="https://img.shields.io/github/license/daniel-mizsak/python-package-template" target="_blank"><img src="https://img.shields.io/github/license/daniel-mizsak/python-package-template" alt="license"></a>
+    </kbd>
 </div>
 
 ## Overview
@@ -187,3 +188,13 @@ Some of my other repositories that may be interesting to look at:
 - [private-lecture-automation](https://github.com/PythonVilag/private-lecture-automation) - Automation tools for private lecture management.
 
 I have also integrated some of the above mentioned tools into my `vscode` settings. You can find them in my [more-than-just-dotfiles](https://github.com/daniel-mizsak/mtjd/blob/main/dotfiles/vscode/settings.json) repository.
+
+<hr>
+
+<div align="center">
+    <strong>⭐ Star the repository if you found it useful ⭐</strong>
+    <br>
+    <a href="https://github.com/daniel-mizsak/repository-template" target="_blank">Repository Template</a> |
+    <a href="https://github.com/daniel-mizsak/workflows" target="_blank">Reusable Workflows</a> |
+    <a href="https://github.com/daniel-mizsak/mtjd" target="_blank">Development Environment </a>
+</div>
