@@ -1,7 +1,7 @@
 {
   "name": "Python Package Template Development Environment",
   "dockerComposeFile": "compose.yml",
-  "service": "ppt-devcontainer",
+  "service": "development-service",
   "workspaceFolder": "/workspace",
   "postCreateCommand": "pip install -e '.[dev]'",
   "customizations": {

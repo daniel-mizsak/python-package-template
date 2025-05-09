@@ -27,7 +27,8 @@ skip_missing_interpreters = true
       "--cov-config=pyproject.toml",
       "--cov-report=term-missing",
       "--cov-fail-under=80",
-      "--cov-report=xml:{work_dir}/artifacts/coverage.xml",
+      "--cov-report=xml:coverage.xml",
+      "--cov-report=html:{work_dir}/artifacts/htmlcov",
     ],
   ]
 
@@ -44,6 +45,7 @@ skip_missing_interpreters = true
 [env.docs]
   description = "Build the documentation."
   extras = ["docs"]
+  set_env = { LC_ALL = "C.UTF-8" }
   commands = [
     [
       "sphinx-build",
