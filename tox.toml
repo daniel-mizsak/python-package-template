@@ -28,6 +28,7 @@ skip_missing_interpreters = true
       "--cov-report=term-missing",
       "--cov-fail-under=80",
       "--cov-report=xml:coverage.xml",
+      "--cov-report=html:{work_dir}/artifacts/htmlcov",
     ],
   ]
 
