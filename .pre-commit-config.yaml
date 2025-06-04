@@ -27,13 +27,13 @@ repos:
 
   # gitleaks
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.25.1
+    rev: v8.27.0
     hooks:
       - id: gitleaks
 
   # ruff
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.8
+    rev: v0.11.12
     hooks:
       # Ruff linting
       - id: ruff
