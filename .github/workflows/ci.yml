@@ -1,22 +1,39 @@
 ---
 name: CI
+
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
   pull_request:
   schedule:
-    - cron: '0 12 * * 6'  # Every Saturday at 12:00
+    - cron: "0 12 * * 6" # Every Saturday at 12:00
+  workflow_call:
+
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  tox:
-    uses: daniel-mizsak/workflows/.github/workflows/tox.yml@v1
+  lint:
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: daniel-mizsak/workflows/.github/workflows/lint.yml@v1
     with:
-      python_versions: "['3.11', '3.12']"
+      megalinter-config: "./.github/linters/.megalinter.yml"
+
+  ci:
+    permissions:
+      contents: read # checkout
+      actions: write # upload-artifact
+      id-token: write # codecov-action
+    uses: daniel-mizsak/workflows/.github/workflows/python-ci.yml@v1
+    with:
+      python-version: "3.12"
+      coverage: true
       codecov: true
-    secrets: inherit
+      documentation: true
+      package: true

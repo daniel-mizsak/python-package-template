@@ -11,38 +11,50 @@ ci:
 # pre-commit
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
         args: [--maxkb=2000]
-      - id: check-docstring-first
+      - id: check-json
       - id: check-merge-conflict
       - id: check-toml
       - id: check-yaml
-        args: [--allow-multiple-documents]
+        args: [--allow-multiple-documents, --unsafe]
       - id: detect-private-key
       - id: end-of-file-fixer
-      - id: name-tests-test
       - id: trailing-whitespace
+
+      - id: check-docstring-first
+      - id: name-tests-test
+
+  # actionlint
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.10
+    hooks:
+      - id: actionlint
+
+  # yamllint
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.37.1
+    hooks:
+      - id: yamllint
+        args: [--config-file=.github/linters/.yamllint.yml, --strict]
 
   # gitleaks
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.27.0
+    rev: v8.30.0
     hooks:
       - id: gitleaks
-
-  # ruff
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.12
-    hooks:
-      # Ruff linting
-      - id: ruff
-        args: [--line-length=120]
-      # Ruff formatting
-      - id: ruff-format
 
   # codespell
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
       - id: codespell
+
+  # ruff
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.11
+    hooks:
+      - id: ruff-check
+      - id: ruff-format

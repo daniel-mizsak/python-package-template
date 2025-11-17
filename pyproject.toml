@@ -1,46 +1,41 @@
 # Build System
 [build-system]
-  requires = ["hatchling", "hatch-vcs"]
-  build-backend = "hatchling.build"
+  requires = ["uv_build"]
+  build-backend = "uv_build"
 
 # Project Metadata
 [project]
   name = "python-package-template-pypi" # Name has to be unique on pypi.
-  dynamic = ["version"]
-  description = "A GitHub template with my python package configurations."
+  version = "0.3.0"
+  description = "Python package template configuration."
   readme = "README.md"
-  requires-python = ">=3.11"
   license = { file = "LICENSE" }
   authors = [{ name = "Daniel Mizsak", email = "info@pythonvilag.hu" }]
   keywords = ["python", "template", "package", "github", "pypi"]
   classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
   ]
-  dependencies = ["numpy"]
-  [project.optional-dependencies]
-    dev = ["mypy", "pre-commit", "pytest-cov", "pytest", "ruff", "tox"]
-    docs = ["furo", "sphinx", "sphinx-copybutton"]
-
-  [project.scripts]
-    ppt = "python_package_template.cli:main"
+  requires-python = ">=3.12"
+  dependencies = ["numpy==2.4.1"]
 
   [project.urls]
-    Repository = "https://github.com/daniel-mizsak/python-package-template"
-    Issues = "https://github.com/daniel-mizsak/python-package-template/issues"
-    Homepage = "https://pythonvilag.hu/"
-    Documentation = "https://python-package-template-pypi.readthedocs.io/en/latest/"
+    Repository = "https://github.com/daniel-mizsak/python-package-template/"
+    Documentation = "https://daniel-mizsak.github.io/python-package-template/"
+    Issues = "https://github.com/daniel-mizsak/python-package-template/issues/"
+
+[dependency-groups]
+  dev = ["coverage", "mypy", "nox", "pre-commit", "pytest", "ruff"]
+  docs = ["zensical", "mkdocstrings-python"]
 
 # Tools
-# Hatch
-[tool.hatch]
-  [tool.hatch.build.targets.wheel]
-    packages = ["src/python_package_template"]
-
-  [tool.hatch.version]
-    source = "vcs"
+# Uv
+[tool.uv.build-backend]
+  module-root = "src"
+  module-name = "python_package_template"
 
 # MyPy
 [tool.mypy]
@@ -50,13 +45,3 @@
   show_error_context = true
   strict = true
   warn_unreachable = true
-  warn_unused_ignores = true
-
-# Pytest
-[tool.pytest.ini_options]
-  testpaths = ["tests"]
-
-# Coverage
-[tool.coverage.report]
-  exclude_also = ["if TYPE_CHECKING:", "if __name__ == '__main__':"]
-  omit = ["*/__main__.py"]
