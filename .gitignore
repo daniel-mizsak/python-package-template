@@ -2,40 +2,29 @@
 
 # System
 .DS_Store
-*.log
 
-# Byte-compiled
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Distribution / Packaging
-.eggs/
-*.egg
-*.egg-info/
-build/
-dist/
-eggs/
-sdist/
-wheels/
-
-# Unit test / Coverage reports
+# Python development files
+.artifacts
+.cache
 .coverage
 .mypy_cache
+.nox
 .pytest_cache
 .ruff_cache
-.tox
 coverage.xml
-htmlcov/
+htmlcov
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
 
 # Environments
 .env
 .venv
-env/
-venv/
 
 # IDE
-.vscode/
+.vscode

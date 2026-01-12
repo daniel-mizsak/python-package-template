@@ -1,0 +1,17 @@
+---
+# Configuration file for MegaLinter
+# See all available variables at https://megalinter.io/configuration/ and in linters documentation
+
+DISABLE:
+  - PYTHON
+  - SPELL
+
+FLAVOR_SUGGESTIONS: false
+GITHUB_COMMENT_REPORTER: true
+SHOW_ELAPSED_TIME: true
+VALIDATE_ALL_CODEBASE: true
+
+COPYPASTE_JSCPD_DISABLE_ERRORS: true
+MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: (^\.github/PULL_REQUEST_TEMPLATE\.md$)
+REPOSITORY_KICS_DISABLE_ERRORS: true
+YAML_YAMLLINT_ARGUMENTS: --strict
