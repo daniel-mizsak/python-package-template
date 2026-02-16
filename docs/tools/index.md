@@ -7,7 +7,7 @@ Below is a list of the tools that I use for almost every project. Navigate to th
 - [Just](./just.md) - Command runner.
 - [Uv](./uv.md) - Package manager, similar to `pip`.
 - [Ruff](./ruff.md) - Code formatter and linter.
-- [MyPy](./mypy.md) - Static type checker.
+- [Ty](./ty.md) - Static type checker.
 - [Pytest](./pytest.md) - Modern testing framework.
 - [Nox](./nox.md) - Testing automation framework for multiple Python environments.
 - [Megalinter](./megalinter.md) - Many-in-one linter solution.
