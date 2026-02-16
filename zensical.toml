@@ -20,7 +20,7 @@
       { "Just" = "tools/just.md" },
       { "Uv" = "tools/uv.md" },
       { "Ruff" = "tools/ruff.md" },
-      { "MyPy" = "tools/mypy.md" },
+      { "Ty" = "tools/ty.md" },
       { "Pytest" = "tools/pytest.md" },
       { "Nox" = "tools/nox.md" },
       { "Megalinter" = "tools/megalinter.md" },

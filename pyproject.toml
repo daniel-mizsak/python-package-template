@@ -6,7 +6,7 @@
 # Project Metadata
 [project]
   name = "python-package-template-pypi" # Name has to be unique on pypi.
-  version = "0.3.0"
+  version = "0.3.1"
   description = "Python package template configuration."
   readme = "README.md"
   license = { file = "LICENSE" }
@@ -28,7 +28,7 @@
     Issues = "https://github.com/daniel-mizsak/python-package-template/issues/"
 
 [dependency-groups]
-  dev = ["coverage", "mypy", "nox", "pre-commit", "pytest", "ruff"]
+  dev = ["coverage", "nox", "pre-commit", "pytest", "ruff", "ty"]
   docs = ["zensical", "mkdocstrings-python"]
 
 # Tools
@@ -36,12 +36,3 @@
 [tool.uv.build-backend]
   module-root = "src"
   module-name = "python_package_template"
-
-# MyPy
-[tool.mypy]
-  ignore_missing_imports = true
-  pretty = true
-  show_column_numbers = true
-  show_error_context = true
-  strict = true
-  warn_unreachable = true

@@ -7,13 +7,14 @@ indent-width = 4
 [lint]
   select = ["ALL"]
   ignore = [
-    "D203",  # one-blank-line-before-class
-    "D212",  # multi-line-summary-first-line
-    "FIX",   # flake8-fixme
-    "INP",   # flake8-no-pep420
-    "S104",  # hardcoded-bind-all-interfaces
-    "TD002", # missing-todo-author
-    "TD003", # missing-todo-link
+    "COM812", # missing-trailing-comma (ruff format handles this)
+    "D203",   # one-blank-line-before-class
+    "D212",   # multi-line-summary-first-line
+    "FIX",    # flake8-fixme
+    "INP",    # flake8-no-pep420
+    "S104",   # hardcoded-bind-all-interfaces
+    "TD002",  # missing-todo-author
+    "TD003",  # missing-todo-link
   ]
   [lint.per-file-ignores]
     "__init__.py" = [
