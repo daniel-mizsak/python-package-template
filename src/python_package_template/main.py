@@ -1,7 +1,7 @@
 """
 Main module of the package.
 
-@author "Daniel Mizsak" <info@pythonvilag.hu>
+@author "Daniel Mizsak" <daniel@mizsak.com>
 """
 
 import numpy as np

@@ -1,7 +1,7 @@
 """
 Tests for the main module.
 
-@author "Daniel Mizsak" <info@pythonvilag.hu>
+@author "Daniel Mizsak" <daniel@mizsak.com>
 """
 
 from python_package_template.main import add_five, subtract_three

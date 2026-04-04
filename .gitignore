@@ -3,7 +3,7 @@
 # System
 .DS_Store
 
-# Python development files
+# Development files
 .artifacts
 .cache
 .coverage
@@ -14,7 +14,7 @@ coverage.xml
 htmlcov
 megalinter-reports
 
-# Python-generated files
+# Generated files
 __pycache__/
 *.py[oc]
 build/
