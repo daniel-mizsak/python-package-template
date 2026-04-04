@@ -1,7 +1,7 @@
 """
 Nox configuration file for testing against multiple python versions.
 
-@author "Daniel Mizsak" <info@pythonvilag.hu>
+@author "Daniel Mizsak" <daniel@mizsak.com>
 """
 
 import nox

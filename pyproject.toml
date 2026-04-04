@@ -6,21 +6,20 @@
 # Project Metadata
 [project]
   name = "python-package-template-pypi" # Name has to be unique on pypi.
-  version = "0.3.1"
+  version = "0.3.2"
   description = "Python package template configuration."
   readme = "README.md"
   license = { file = "LICENSE" }
-  authors = [{ name = "Daniel Mizsak", email = "info@pythonvilag.hu" }]
+  authors = [{ name = "Daniel Mizsak", email = "daniel@mizsak.com" }]
   keywords = ["python", "template", "package", "github", "pypi"]
   classifiers = [
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
   ]
   requires-python = ">=3.12"
-  dependencies = ["numpy==2.4.2"]
+  dependencies = ["numpy==2.4.4"]
 
   [project.urls]
     Repository = "https://github.com/daniel-mizsak/python-package-template/"
