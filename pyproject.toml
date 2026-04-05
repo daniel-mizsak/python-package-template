@@ -6,7 +6,7 @@
 # Project Metadata
 [project]
   name = "python-package-template-pypi" # Name has to be unique on pypi.
-  version = "0.3.2"
+  version = "0.0.0" # Version set by GitHub release.
   description = "Python package template configuration."
   readme = "README.md"
   license = { file = "LICENSE" }
