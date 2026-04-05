@@ -2,15 +2,16 @@
 name: CD
 
 on:
-  push:
-    tags:
-      - "*"
+  release:
+    types: [published]
 
 permissions: {}
 
 jobs:
   ci:
     uses: ./.github/workflows/ci.yml
+    with:
+      package-version: ${{ github.event.release.tag_name }}
     permissions:
       contents: read
       pull-requests: write

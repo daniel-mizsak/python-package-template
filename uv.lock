@@ -614,7 +614,7 @@ wheels = [
 
 [[package]]
 name = "python-package-template-pypi"
-version = "0.3.2"
+version = "0.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "numpy" },
