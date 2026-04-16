@@ -21,20 +21,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  prek:
+    permissions:
+      contents: read
+    uses: daniel-mizsak/workflows/.github/workflows/prek.yml@1a10f29ef1289f7f1c82e896f9307e701b6c7a77 # v2.1.0
+
   lint:
     permissions:
       contents: read
       pull-requests: write
-    uses: daniel-mizsak/workflows/.github/workflows/lint.yml@v1
+    uses: daniel-mizsak/workflows/.github/workflows/lint.yml@1a10f29ef1289f7f1c82e896f9307e701b6c7a77 # v2.1.0
     with:
       megalinter-config: "./.github/linters/.megalinter.yml"
 
   ci:
     permissions:
-      contents: read # checkout
-      actions: write # upload-artifact
-      id-token: write # codecov-action
-    uses: daniel-mizsak/workflows/.github/workflows/python-ci.yml@v1
+      contents: read
+      id-token: write
+    uses: daniel-mizsak/workflows/.github/workflows/python-ci.yml@1a10f29ef1289f7f1c82e896f9307e701b6c7a77 # v2.1.0
     with:
       package-version: ${{ inputs.package-version }}
       python-version: "3.12"
