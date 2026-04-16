@@ -64,7 +64,7 @@ megalinter:
 
 [group("qa-extra")]
 pre-commit:
-    uv run pre-commit run --all-files
+    uv run prek run --all-files
 
 [group("build")]
 build-documentation:
