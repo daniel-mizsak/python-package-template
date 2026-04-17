@@ -11,7 +11,8 @@ Below is a list of the tools that I use for almost every project. Navigate to th
 - [Pytest](./pytest.md) - Modern testing framework.
 - [Nox](./nox.md) - Testing automation framework for multiple Python environments.
 - [Megalinter](./megalinter.md) - Many-in-one linter solution.
-- [Pre-Commit](./pre-commit.md) - Git pre-commit hook manager.
+- [Prek](./prek.md) - Git hook manager for pre-commit checks.
+- [Renovate](./renovate.md) - Dependency update automation tool.
 - [Codecov](./codecov.md) - Platform for tracking code coverage.
 - [Zensical](./zensical.md) - Static site generator for documentation.
 - [GitHub Pages](./github-pages.md) - Static site hosting service.
