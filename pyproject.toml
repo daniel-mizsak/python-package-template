@@ -33,12 +33,15 @@
     "prek==0.3.9",
     "pytest==9.0.3",
     "ruff==0.15.10",
-    "ty==0.0.31",
+    "ty==0.0.29",
   ]
-  docs = ["zensical==0.0.33", "mkdocstrings-python==2.0.3"]
+  docs = ["zensical==0.0.32", "mkdocstrings-python==2.0.3"]
 
 # Tools
 # Uv
-[tool.uv.build-backend]
-  module-root = "src"
-  module-name = "python_package_template"
+[tool.uv]
+  exclude-newer = "1 week"
+
+  [tool.uv.build-backend]
+    module-root = "src"
+    module-name = "python_package_template"
