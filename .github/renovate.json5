@@ -7,7 +7,6 @@
     ":configMigration",
     ":pinDevDependencies",
     "abandonments:recommended",
-    ":maintainLockFilesWeekly",
   ],
 
   enabledManagers: ["github-actions", "pep621", "pre-commit"],
