@@ -14,7 +14,7 @@ clean:
         htmlcov \
         megalinter-reports \
         .venv
-    find . -name ".DS_Store" -type f -delete
+    find . -type f -name ".DS_Store" -delete
     find . -type d -name "__pycache__" -exec rm -r {} +
 
 [group("lifecycle")]

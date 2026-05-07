@@ -41,16 +41,18 @@
       extractVersion: "^(?<version>v?\\d+\\.\\d+\\.\\d+)$",
       versioning: "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$",
     },
-    // Disable github-actions minimum release age for our own actions.
-    {
-      matchManagers: ["github-actions"],
-      matchPackageNames: ["daniel-mizsak/workflows"],
-      minimumReleaseAge: null,
-    },
     // Group github-actions dependencies in a single PR.
     {
       groupName: "Dependencies for github-actions",
       matchManagers: ["github-actions"],
+    },
+    // Group self-owned github-actions dependencies in a single PR.
+    {
+      groupName: "Dependencies for github-actions under daniel-mizsak/workflows",
+      matchManagers: ["github-actions"],
+      matchPackageNames: ["daniel-mizsak/workflows"],
+      minimumReleaseAge: null,
+      schedule: ["* 0-5 * * *"], // Daily before 6am.
     },
     // Group pep621 dependencies in a single PR.
     {
