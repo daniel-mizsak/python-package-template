@@ -10,6 +10,10 @@
   ],
 
   enabledManagers: ["github-actions", "pep621", "pre-commit"],
+  lockFileMaintenance: {
+    enabled: true,
+    schedule: ["* 0-5 1 * *"], // First day of the month before 6am.
+  },
   "pre-commit": {
     enabled: true,
   },
