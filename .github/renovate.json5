@@ -13,6 +13,7 @@
   lockFileMaintenance: {
     enabled: true,
     schedule: ["* 0-5 1 * *"], // First day of the month before 6am.
+    minimumReleaseAge: null, // Handled by uv in pyproject.toml.
   },
   "pre-commit": {
     enabled: true,
