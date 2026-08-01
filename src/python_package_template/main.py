@@ -1,7 +1,7 @@
 """
 Main module of the package.
 
-@author "Daniel Mizsak" <daniel@mizsak.com>
+Copyright (C) 2026 "Daniel Mizsak" <daniel@mizsak.com>
 """
 
 import numpy as np

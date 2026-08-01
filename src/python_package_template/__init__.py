@@ -1,7 +1,7 @@
 """
 Python package template configuration.
 
-@author "Daniel Mizsak" <daniel@mizsak.com>
+Copyright (C) 2026 "Daniel Mizsak" <daniel@mizsak.com>
 """
 
 from python_package_template.main import add_five, subtract_three
