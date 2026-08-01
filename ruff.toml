@@ -29,9 +29,12 @@ indent-width = 4
       "S101",    # assert
     ]
     "docs_src/**" = [
-      "D",    # pydocstyle
-      "S106", # hardcoded-password-func-arg
-      "T201", # print
+      "CPY001", # missing-copyright-notice
+      "D",      # pydocstyle
+      "S106",   # hardcoded-password-func-arg
+      "T201",   # print
     ]
   [lint.pydocstyle]
     convention = "google"
+  [lint.flake8-copyright]
+    min-file-size = 1
