@@ -28,14 +28,14 @@
 
 [dependency-groups]
   dev = [
-    "coverage==7.14.3",
-    "nox==2026.4.10",
-    "prek==0.4.5",
+    "coverage==7.15.2",
+    "nox==2026.7.11",
+    "prek==0.4.11",
     "pytest==9.1.1",
-    "ruff==0.15.20",
-    "ty==0.0.54",
+    "ruff==0.16.0",
+    "ty==0.0.63",
   ]
-  docs = ["zensical==0.0.46", "mkdocstrings-python==2.0.5"]
+  docs = ["zensical==0.0.51", "mkdocstrings-python==2.0.5"]
 
 # Tools
 # Uv
