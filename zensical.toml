@@ -7,6 +7,7 @@
   site_author = "Daniel Mizsak"
   site_url = "https://daniel-mizsak.github.io/python-package-template/"
   site_dir = ".artifacts/site"
+  strict = true
 
   repo_name = "python-package-template"
   repo_url = "https://github.com/daniel-mizsak/python-package-template/"
