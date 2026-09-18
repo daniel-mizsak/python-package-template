@@ -4,15 +4,15 @@
 .DS_Store
 
 # Development files
-.artifacts
-.cache
+.artifacts/
+.cache/
 .coverage
-.nox
-.pytest_cache
-.ruff_cache
+.nox/
+.pytest_cache/
+.ruff_cache/
 coverage.xml
-htmlcov
-megalinter-reports
+htmlcov/
+megalinter-reports/
 
 # Generated files
 __pycache__/
@@ -24,7 +24,7 @@ wheels/
 
 # Environments
 .env
-.venv
+.venv/
 
 # IDE
-.vscode
+.vscode/
