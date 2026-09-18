@@ -11,7 +11,7 @@ The `zensical` related settings are defined in the `zensical.toml` file.
 Build the documentation locally by running:
 
 ```bash
-zensical build --clean --strict
+zensical build --clean
 ```
 
 Or (preferably) use `just`:
