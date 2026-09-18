@@ -13,6 +13,6 @@ Add a new publisher:
 
 My publishing workflow is the following (see it in action in `.github/workflows/cd.yml`):
 
-- Every time a tag is pushed to the `main` branch, I run the `.github/workflows/ci.yml` workflow.
+- Every time a GitHub release is published, the `.github/workflows/cd.yml` workflow calls `.github/workflows/ci.yml` with the release tag as the package version.
 - This workflow builds the package (using my [reusable python-ci GitHub Workflow](https://github.com/daniel-mizsak/workflows/blob/main/.github/workflows/python-ci.yml){target}) and uploads the generated build files as an artifact.
-- Once this job ran successfully, the `pypi-publish` job downloads the artifact and publishes it using the `ypa/gh-action-pypi-publish` action.
+- Once this job has run successfully, the `pypi-publish` job downloads the artifact and publishes it using the `pypa/gh-action-pypi-publish` action.

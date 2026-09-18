@@ -9,7 +9,8 @@
   version = "0.0.0" # Version set by GitHub release.
   description = "Python package template configuration."
   readme = "README.md"
-  license = { file = "LICENSE" }
+  license = "MIT"
+  license-files = ["LICENSE"]
   authors = [{ name = "Daniel Mizsak", email = "daniel@mizsak.com" }]
   keywords = ["python", "template", "package", "github", "pypi"]
   classifiers = [
