@@ -8,7 +8,7 @@ The `megalinter` related settings are defined in the `.github/linters/megalinter
 Call `megalinter` by running:
 
 ```bash
-npx mega-linter-runner --flavor cupcake -e "MEGALINTER_CONFIG=.github/linters/.megalinter.yml"
+npx mega-linter-runner --flavor ci_light -e "MEGALINTER_CONFIG=.github/linters/.megalinter.yml"
 ```
 
 Or (preferably) use `just`:
