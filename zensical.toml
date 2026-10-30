@@ -39,7 +39,7 @@
   ]
 
   [project.theme]
-    variant = "classis"
+    variant = "classic"
     logo = "assets/logo.png"
     favicon = "assets/logo.png"
     features = [

@@ -47,13 +47,13 @@ test-all-python:
 
 [group("qa")]
 coverage:
-    uv run coverage run --source=tests --module pytest
-    uv run coverage report --fail-under=100 --show-missing
+    uv run coverage run --source=tests,python_package_template --module pytest
 
-    uv run coverage run --source=python_package_template --module pytest
-    uv run coverage report --show-missing
-    uv run coverage xml -o .artifacts/coverage.xml
-    uv run coverage html -d .artifacts/htmlcov
+    uv run coverage report --include='tests/*' --fail-under=100 --show-missing
+
+    uv run coverage report --include='src/python_package_template/*' --show-missing
+    uv run coverage xml --include='src/python_package_template/*' -o .artifacts/coverage.xml
+    uv run coverage html --include='src/python_package_template/*' -d .artifacts/htmlcov
 
 [group("qa")]
 check-all: lint type test-all-python coverage
