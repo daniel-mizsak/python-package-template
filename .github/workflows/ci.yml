@@ -24,13 +24,13 @@ jobs:
   prek:
     permissions:
       contents: read
-    uses: daniel-mizsak/workflows/.github/workflows/prek.yml@cf0f188aa237b6995b21cc0237897ff8bfe2da5b # v3.0.1
+    uses: daniel-mizsak/workflows/.github/workflows/prek.yml@92245e2677c21a319d87cc22d77a5841efe0e25f # v3.0.2
 
   lint:
     permissions:
       contents: read
       pull-requests: write
-    uses: daniel-mizsak/workflows/.github/workflows/lint-ci-light.yml@cf0f188aa237b6995b21cc0237897ff8bfe2da5b # v3.0.1
+    uses: daniel-mizsak/workflows/.github/workflows/lint-ci-light.yml@92245e2677c21a319d87cc22d77a5841efe0e25f # v3.0.2
     with:
       megalinter-config: "./.github/linters/.megalinter.yml"
 
@@ -38,7 +38,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    uses: daniel-mizsak/workflows/.github/workflows/python-ci.yml@cf0f188aa237b6995b21cc0237897ff8bfe2da5b # v3.0.1
+    uses: daniel-mizsak/workflows/.github/workflows/python-ci.yml@92245e2677c21a319d87cc22d77a5841efe0e25f # v3.0.2
     with:
       package-version: ${{ inputs.package-version }}
       python-version: "3.12"
