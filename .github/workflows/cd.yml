@@ -37,6 +37,7 @@ jobs:
     needs: ci
     environment:
       name: pypi
+      url: https://pypi.org/p/python-package-template-pypi
     runs-on: ubuntu-latest
     permissions:
       id-token: write

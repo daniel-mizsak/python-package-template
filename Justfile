@@ -47,7 +47,7 @@ test-all-python:
 
 [group("qa")]
 coverage:
-    uv run coverage run --source=tests,python_package_template --module pytest
+    uv run coverage run --module pytest
 
     uv run coverage report --include='tests/*' --fail-under=100 --show-missing
 

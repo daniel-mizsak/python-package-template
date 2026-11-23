@@ -14,6 +14,7 @@
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
   ]
   dependencies = ["numpy>=2.4.4"]
 
@@ -24,14 +25,14 @@
 
 [dependency-groups]
   dev = [
-    "coverage==7.17.0",
+    "coverage==7.17.3",
     "nox==2026.10.20",
-    "prek==0.5.7",
-    "pytest==9.1.1",
-    "ruff==0.17.2",
-    "ty==0.0.91",
+    "prek==0.5.11",
+    "pytest==9.2.0",
+    "ruff==0.17.5",
+    "ty==0.0.104",
   ]
-  docs = ["mkdocstrings-python==2.0.10", "zensical==0.0.72"]
+  docs = ["mkdocstrings-python==2.0.11", "zensical==0.1.1"]
 
 # Build System
 [build-system]
@@ -39,6 +40,16 @@
   build-backend = "uv_build"
 
 # Tools
+# Coverage
+[tool.coverage.run]
+  branch = true
+  source = ["tests", "python_package_template"]
+
+# Pytest
+[tool.pytest.ini_options]
+  filterwarnings = ["error"]
+  strict = true
+
 # Uv
 [tool.uv]
   exclude-newer = "1 week"
