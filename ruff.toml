@@ -7,34 +7,37 @@ indent-width = 4
 [lint]
   select = ["ALL"]
   ignore = [
-    "COM812", # missing-trailing-comma (ruff format handles this)
-    "D203",   # one-blank-line-before-class
-    "D212",   # multi-line-summary-first-line
-    "FIX",    # flake8-fixme
-    "INP",    # flake8-no-pep420
-    "S104",   # hardcoded-bind-all-interfaces
+    "COM812",  # missing-trailing-comma (ruff format handles this)
+    "D203",  # one-blank-line-before-class
+    "D212",  # multi-line-summary-first-line
+    "FIX",  # flake8-fixme
+    "INP",  # flake8-no-pep420
+    "S104",  # hardcoded-bind-all-interfaces
     "TD002",  # missing-todo-author
     "TD003",  # missing-todo-link
   ]
+
   [lint.per-file-ignores]
     "__init__.py" = [
-      "D104", # undocumented-public-package
+      "D104",  # undocumented-public-package
     ]
     "tests/**" = [
       "ANN001",  # missing-type-function-argument
       "ANN201",  # missing-return-type-undocumented-public-function
-      "D",       # pydocstyle
-      "PLR2004", # magic-value-comparison
-      "PT001",   # pytest-fixture-incorrect-parentheses-style
-      "S101",    # assert
+      "D",  # pydocstyle
+      "PLR2004",  # magic-value-comparison
+      "PT001",  # pytest-fixture-incorrect-parentheses-style
+      "S101",  # assert
     ]
     "docs_src/**" = [
-      "CPY001", # missing-copyright-notice
-      "D",      # pydocstyle
-      "S106",   # hardcoded-password-func-arg
-      "T201",   # print
+      "CPY001",  # missing-copyright-notice
+      "D",  # pydocstyle
+      "S106",  # hardcoded-password-func-arg
+      "T201",  # print
     ]
+
   [lint.pydocstyle]
     convention = "google"
+
   [lint.flake8-copyright]
     min-file-size = 1
